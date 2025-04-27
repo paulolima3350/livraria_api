@@ -1,34 +1,31 @@
-📚 Projeto Livraria
+# 📚 Projeto Livraria
 
-Bem-vindo ao Projeto Livraria! Este é um sistema de gerenciamento de livros, utilizando Spring Boot, Spring Data JPA, PostgreSQL e Swagger para a documentação da API. Através deste sistema, você pode cadastrar, listar, buscar, atualizar e deletar livros e escritores na livraria.
+Bem-vindo ao **Projeto Livraria**! Este é um sistema de gerenciamento de livros, utilizando **Spring Boot**, **Spring Data JPA**, **PostgreSQL** e **Swagger** para a documentação da API. Através deste sistema, você pode cadastrar, listar, buscar, atualizar e deletar livros e escritores na livraria.
 
+## 🔧 Tecnologias Utilizadas
 
-🔧 Tecnologias Utilizadas
-Spring Boot: Framework Java para construir aplicações de nível corporativo com facilidade.
+- **Spring Boot**: Framework Java para construir aplicações de nível corporativo com facilidade.
+- **Spring Data JPA**: Simplificação do uso do JPA para interação com bancos de dados.
+- **PostgreSQL**: Banco de dados relacional robusto para armazenar informações da livraria.
+- **Swagger**: Ferramenta para gerar documentação interativa da API.
+- **Docker**: Para facilitar a containerização e orquestração da aplicação e do banco de dados.
 
-Spring Data JPA: Simplificação do uso do JPA para interação com bancos de dados.
+## 🚀 Como Rodar o Projeto
 
-PostgreSQL: Banco de dados relacional robusto para armazenar informações da livraria.
+### Requisitos
 
-Swagger: Ferramenta para gerar documentação interativa da API.
+- Docker (para rodar os containers)
+- Java 21 (ou versão mais recente)
 
-Docker: Para facilitar a containerização e orquestração da aplicação e do banco de dados.
+### Passos para Executar
 
-🚀 Como Rodar o Projeto
-Requisitos
-Docker (para rodar os containers)
+1. **Clone o repositório**:
 
-Java 21 (ou versão mais recente)
+   Abra o terminal e execute o comando para clonar o repositório:
 
-Passos para Executar
-Clone o repositório:
-
-Abra o terminal e execute o comando para clonar o repositório:
-
-bash
-Copiar
-git clone https://github.com/seu-usuario/livraria.git
-cd livraria
+   ```bash
+   git clone https://github.com/seu-usuario/livraria.git
+   cd livraria
 Construir e iniciar os containers:
 
 Utilize o Docker Compose para construir e rodar os containers da aplicação e do banco de dados:
@@ -148,3 +145,4 @@ entities: Entidades JPA que representam as tabelas do banco de dados.
 repositories: Interfaces para interação com o banco de dados usando Spring Data JPA.
 
 services: Contém a lógica de negócios da aplicação.
+
