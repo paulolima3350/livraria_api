@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    container_name: livraria-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 3350
+      POSTGRES_DB: bd_livraria
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - livraria-network
+
+  app:
+    image: openjdk:21-jdk
+    container_name: livraria-app
+    working_dir: /app  # Defina o diretório de trabalho correto
+    volumes:
+      - .:/app  # Montando o diretório do projeto para o contêiner
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/bd_livraria
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 3350
+    command: ["sh", "-c", "chmod +x /app/mvnw && /app/mvnw clean install && java -jar /app/target/livraria-0.0.1-SNAPSHOT.jar"]
+    depends_on:
+      - db
+    networks:
+      - livraria-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  livraria-network:
+    driver: bridge
