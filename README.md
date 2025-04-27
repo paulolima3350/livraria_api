@@ -1,5 +1,7 @@
 📚 Projeto Livraria
+
 Bem-vindo ao Projeto Livraria! Este é um sistema de gerenciamento de livros, utilizando Spring Boot, Spring Data JPA, PostgreSQL e Swagger para a documentação da API. Através deste sistema, você pode cadastrar, listar, buscar, atualizar e deletar livros e escritores na livraria.
+
 
 🔧 Tecnologias Utilizadas
 Spring Boot: Framework Java para construir aplicações de nível corporativo com facilidade.
