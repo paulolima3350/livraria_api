@@ -100,33 +100,49 @@ Aqui estão os principais endpoints disponíveis na API:
 
 ## 📂 Estrutura do Projeto
 
-O projeto segue a seguinte estrutura de diretórios:
+A estrutura de diretórios do projeto está organizada da seguinte forma:
 
 ```
 livraria/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   ├── br/
-│   │   │   │   ├── com/
-│   │   │   │   │   ├── livraria/
-│   │   │   │   │   │   ├── controllers/
-│   │   │   │   │   │   ├── dtos/
-│   │   │   │   │   │   ├── entities/
-│   │   │   │   │   │   ├── repositories/
-│   │   │   │   │   │   └── services/
+│   │   │   └── br/
+│   │   │       └── com/
+│   │   │           └── livraria/
+│   │   │               ├── components/        # Componentes reutilizáveis da aplicação
+│   │   │               ├── configurations/    # Configurações do Spring Boot
+│   │   │               ├── controllers/       # Controladores responsáveis pelos endpoints da API
+│   │   │               ├── dtos/              # Objetos de transferência de dados (DTOs)
+│   │   │               ├── entities/          # Entidades JPA que representam as tabelas do banco de dados
+│   │   │               ├── handlers/          # Manipuladores de exceções
+│   │   │               ├── repositories/      # Interfaces para interação com o banco de dados
+│   │   │               ├── services/          # Lógica de negócios da aplicação
+│   │   │               └── LivrariaApplication.java # Classe principal da aplicação
 │   │   ├── resources/
-│   │   │   ├── application.properties
+│   │   │   └── application.properties         # Configurações gerais da aplicação
 │   ├── test/
-├── docker-compose.yml
-├── pom.xml
-├── mvnw
-├── mvnw.cmd
-├── README.md
+│   │   ├── java/
+│   │   │   └── br/
+│   │   │       └── com/
+│   │   │           └── livraria/
+│   │   │               └── LivrariaApplicationTests.java # Testes principais da aplicação
+├── docker-compose.yml                         # Configuração para executar a aplicação e o banco no Docker
+├── pom.xml                                    # Configuração do Maven
+├── mvnw                                       # Script do Maven Wrapper
+├── mvnw.cmd                                   # Script do Maven Wrapper para Windows
+├── README.md                                  # Arquivo de documentação
 ```
 
+### 📁 Descrição das Pastas
+
+- **components**: Contém componentes reutilizáveis da aplicação.
+- **configurations**: Inclui configurações gerais da aplicação, como segurança e beans.
 - **controllers**: Controladores responsáveis por expor os endpoints da API.
-- **dtos**: Objetos que definem a estrutura de dados transmitidos entre cliente e servidor.
+- **dtos**: Objetos de transferência de dados (DTOs), usados para estruturar requisições e respostas da API.
 - **entities**: Entidades JPA que representam as tabelas do banco de dados.
-- **repositories**: Interfaces para interação com o banco de dados usando Spring Data JPA.
-- **services**: Contém a lógica de negócios da aplicação.
+- **handlers**: Manipuladores de exceções para tratar erros de forma centralizada.
+- **repositories**: Interfaces para interação com o banco de dados utilizando Spring Data JPA.
+- **services**: Contém a lógica de negócios da aplicação, realizando operações de manipulação de dados.
+
+Essa organização facilita a manutenção e escalabilidade do projeto, separando responsabilidades de forma clara.
